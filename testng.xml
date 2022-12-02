@@ -1,0 +1,7 @@
+<suite name="RegexBasedTransformation">
+    <test name="testngTest">
+        <classes>
+            <class name="Regex1.JobDescriptionRegex" />
+        </classes>
+    </test>
+</suite>
