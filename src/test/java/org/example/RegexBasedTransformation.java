@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.InputMismatchException;
 import java.util.regex.Pattern;
 
 class RegexBasedTransformation {
@@ -32,7 +33,7 @@ class RegexBasedTransformation {
     String forUS = "((?i)us|california)$";
     String forIndia = "(?i)IND|india";
     String forUK = "(?i)UK";
-    String forCameroon ="(?i)cameroon";
+    String forCameroon = "(?i)cameroon";
     String forTrinidadTRO = "(?i)TrinidadTRO";
     String forAfg = "(?i)AFG";
     String forARG = "(?i)ARG";
@@ -40,99 +41,102 @@ class RegexBasedTransformation {
     String forNULL = "(?i)XXX|countr|country|111";
 
     public String transform(String attr, String attrToBeReplaced) {
-        if (Pattern.matches(forAccountRepresentative, attr)) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAccountant1, attr)) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            if (Pattern.matches(forAccountRepresentative, attr)) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAccountant2, attr)) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAccountant1, attr)) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAccManager, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAccountant2, attr)) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAcCordAMCO, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAccManager, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAccPayClerk, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAcCordAMCO, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forActuarialAnalyst, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAccPayClerk, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forActuary, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forActuarialAnalyst, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAdminSvcsCoordI, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forActuary, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAdmin, attr)) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAdminSvcsCoordI, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAdministrativeclerk, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAdmin, attr)) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAideHomeHealthString, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAdministrativeclerk, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAnalyst, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAideHomeHealthString, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAnalystData, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAnalyst, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAudiologist, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAnalystData, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forBsF, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forAudiologist, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forBsfConslt, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forBsF, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(behavioralMedSpecLcs, attr)) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forBsfConslt, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forBehavioralMedPsych, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(behavioralMedSpecLcs, attr)) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forLabAssistant1, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forBehavioralMedPsych, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forLabAssistant2, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
-         }
+            } else if (Pattern.matches(forLabAssistant1, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        //for country
-        else if (Pattern.matches(forIndia, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forLabAssistant2, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
+            }
 
-        } else if (Pattern.matches(forUS, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            //for country
+            else if (Pattern.matches(forIndia, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forUK, attr)) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forUS, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forCameroon, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forUK, attr)) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forTrinidadTRO, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forCameroon, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
 
-        } else if (Pattern.matches(forAfg, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forTrinidadTRO, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
+
+            } else if (Pattern.matches(forAfg, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forARG, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
+            } else if (Pattern.matches(forNULL, attr.trim())) {
+                return (attr.replaceAll(attr, attrToBeReplaced));
+            }
+            else{
+             throw new InputMismatchException("Please enter valid input for ("+attr +")");
+            }
+
         }
-        else if (Pattern.matches(forARG, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
-        }
-        else if (Pattern.matches(forNULL, attr.trim())) {
-            return (attr.replaceAll(attr, attrToBeReplaced));
-        }
-        return "Null";
-
     }
 
-}
+
+
 
 
