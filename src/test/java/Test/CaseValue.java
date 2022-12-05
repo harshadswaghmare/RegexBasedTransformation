@@ -1,5 +1,6 @@
-package org.example;
+package Test;
 
+import org.example.RegexBasedTransformation;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -89,28 +90,40 @@ public class CaseValue {
 
     @Test
     public void actuarialAnalyst() {
-        String result = obj.transform("ActuarialAnalyst", "Actuarial Analyst");
-        System.out.println(result);
-        String expected = "Actuarial Analyst";
-        Assert.assertEquals(expected, result);
+        try {
+            String result = obj.transform("ActuarialAnalyst", "Actuarial Analyst");
+            System.out.println(result);
+            String expected = "Actuarial Analyst";
+            Assert.assertEquals(expected, result);
 
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @Test
     public void actuary() {
-        String result = obj.transform("ACTUARY", "Actuary");
-        System.out.println(result);
-        String expected = "Actuary";
-        Assert.assertEquals(expected, result);
+        try {
+            String result = obj.transform("ACTUARY", "Actuary");
+            System.out.println(result);
+            String expected = "Actuary";
+            Assert.assertEquals(expected, result);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 
     @Test
     public void adminSvcsCoord() {
+        try{
         String result = obj.transform("ADMIN SVCS COORD I", "Admin Svcs Coord I");
         System.out.println(result);
         String expected = "Admin Svcs Coord I";
         Assert.assertEquals(expected, result);
+    } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @Test
@@ -135,18 +148,26 @@ public class CaseValue {
 
     @Test
     public void administrativeClerk() {
-        String result = obj.transform("ADMINISTRATIVE CLERK", "Administrative Clerk");
+     try{
+         String result = obj.transform("ADMINISTRATIVE CLERK", "Administrative Clerk");
         System.out.println(result);
         String expected = "Administrative Clerk";
         Assert.assertEquals(expected, result);
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
 
     @Test
     public void aideHomeHealth() {
+     try{
         String result = obj.transform("AIDE, HOME HEALTH", "Aide, Home Health");
         System.out.println(result);
         String expected = "Aide, Home Health";
         Assert.assertEquals(expected, result);
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
 
     @Test
@@ -167,33 +188,46 @@ public class CaseValue {
 
     @Test
     public void analystData() {
+     try{
         String result = obj.transform("Analyst,Data", "Analyst,Data");
         System.out.println(result);
         String expected = "Analyst,Data";
         Assert.assertEquals(expected, result);
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
 
     @Test
     public void audiologist() {
+     try{
         String result = obj.transform("AUDIOLOGIST", "Audiologist");
         System.out.println(result);
         String expected = "Audiologist";
         Assert.assertEquals(expected, result);
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
 
     @Test
     public void bsfConslt() {
+        try{
         String result = obj.transform("BS&F Conslt", "BS&F Consultant");
         System.out.println(result);
         String expected = "BS&F Consultant";
         Assert.assertEquals(expected, result);
+    } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @Test
     public void bsfAnl() {
         try{
-        String result = obj.transform("BS&F Conslt", "BS&F Analyst");
-        String result1 = obj.transform("BS&F Consl", "BS&F Analyst");
+        String result = obj.transform("BS&F Anl", "BS&F Analyst");
+        String result1 = obj.transform("BS&F Consul", "BS&F Analyst");
+            System.out.println();
         System.out.println(result + "\n" + result1);
         String expected = "BS&F Analyst";
         String expected1 = "BS&F Analyst";
@@ -305,7 +339,6 @@ public class CaseValue {
             String result1 = obj.transform("us", "United States of America");
             String result2 = obj.transform("CALIFORNIA", "United States of America");
             String result3 = obj.transform("California", "United States of America");
-
             System.out.println(result + "\n" + result1 + "\n" + result2 + "\n" + result3);
             String expected, expected1, expected2, expected3;
             expected = expected1 = expected2 = expected3 = "United States of America";
@@ -323,7 +356,6 @@ public class CaseValue {
         String result = obj.transform("ind", "India");
         String result1 = obj.transform("IND", "India");
         String result2 = obj.transform("INDIA", "India");
-
         System.out.println(result + "\n" + result1 + "\n" + result2);
         String expected, expected1, expected2;
         expected = expected1 = expected2 = "India";
@@ -349,11 +381,15 @@ public class CaseValue {
 
     @Test
     public void forCameroon() {
+        try{
         String result = obj.transform("cameroon", "Cameroon");
         System.out.println(result);
         String expected = "Cameroon";
         Assert.assertEquals(expected, result);
 
+    } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @Test
@@ -374,25 +410,34 @@ public class CaseValue {
 
     @Test
     public void forTrinidad() {
+     try{
         String result = obj.transform("TrinidadTRO", "Trinidad");
         System.out.println(result);
         String expected = "Trinidad";
         Assert.assertEquals(expected, result);
 
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
 
     @Test
     public void forArgentina() {
+     try{
         String result = obj.transform("ARG", "Argentina");
         System.out.println(result);
         String expected = "Argentina";
         Assert.assertEquals(expected, result);
 
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
 
 
     @Test
     public void forNull() {
+     try{
         String result = obj.transform("XXX", "NULL");
         String result1 = obj.transform("countr", "NULL");
         String result2 = obj.transform("country", "NULL");
@@ -405,7 +450,8 @@ public class CaseValue {
         Assert.assertEquals(expected1, result1);
         Assert.assertEquals(expected2, result2);
         Assert.assertEquals(expected3, result3);
+    } catch (Exception e) {
+         System.out.println(e);
+     }
     }
-
-
 }
