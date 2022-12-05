@@ -124,10 +124,13 @@ public class RegexBasedTransformation {
 
         } else if (Pattern.matches(forAfg, attr.trim())) {
             return (attr.replaceAll(attr, attrToBeReplaced));
+        
         } else if (Pattern.matches(forARG, attr.trim())) {
             return (attr.replaceAll(attr, attrToBeReplaced));
+        
         } else if (Pattern.matches(forNULL, attr.trim())) {
             return (attr.replaceAll(attr, attrToBeReplaced));
+        
         }
         else{
             throw new InputMismatchException("Please enter valid input for ("+attr +")");
